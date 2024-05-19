@@ -584,11 +584,11 @@
     left: 82%;
 }
 
-.main-frame .services{
+.midd_frame .services{
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 16%  0  3% 0;
+    margin-top: 6rem;
 
 }
 
@@ -626,16 +626,21 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
 }
 
 .service_choices .service_box{
+    width: 100%;
+    height: 100%;
+    padding: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
+    background-color: white;
 }
 
 .service_choices .service_box h1{
@@ -684,8 +689,8 @@
 }
 
 .right_2 .icon_btn{
+    background-color: #F0F0F6;
+    padding: 1rem;
     border-radius: 50%;
-    background-color: #f0f0f610;
-    padding: 5rem;
-    
+    text-align: center;
 }
