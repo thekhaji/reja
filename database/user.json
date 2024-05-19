@@ -7,13 +7,13 @@
 "skills": ["Html", "Css", "Js", "NodeJS" , "Python"],
 "extra_skills": ["Bootstrap, Materialize", "Styling, Sass", "Django, Flask", "GIT Knowledge"],
 "work_place": "IT Company",
-"service_des": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
+"service_des": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
 "about_me":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoq",
 "city": "Denau",
 "title": ["Flower", "Seedlings","Gardner", "Old", "New"],
 "flower _desc": ["What is a Flower?", "What is a Seedling?", "Who is Gardner?"],
 "flower_name": ["Tulip", "Daffodil", "Poppy", "Sunflower", "Bluebell", "Rose", "Snowdrop", "Cherry", "blossom"],
 "flower_price": ["15$", "25$", "12$", "20$", "35$", "30$", "22$", "19$", "9$"],
-"famous _words": ["World is Beautiful with Flowers"],
+"famous_words": ["World is Beautiful with Flowers"],
 "famous_name": ["Steve Jobs"]
 }
