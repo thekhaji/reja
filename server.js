@@ -1,43 +1,24 @@
-const express = require("express");
-const app = express();
 const http = require('http');
-const fs = require("fs");
+const mongodb = require("mongodb");
 
-let user;
-fs.readFile("database/user.json", "utf-8", (err,data)=>{
-    if(err){
-        console.log("Error:", err);
-    }
+const connectionString = "mongodb+srv://thekhaji:N20IfRfqoxHIEdG2@cluster0.8avjbsb.mongodb.net/Reja?authSource=admin&replicaSet=atlas-13ore5-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+
+mongodb.connect( connectionString, {
+        useNewUrlParser:true,
+        useUnifiedTopology: true,
+    },
+    (err,client)=>{
+    if(err) console.log("Error");
     else{
-        user = JSON.parse(data);
+        console.log("Success");
+        module.exports = client;
+        const app = require("./app");
+        const server = http.createServer(app);
+        let PORT = 3000;
+        server.listen(PORT, function(){
+        console.log(`The server is running sufficiently on port ${PORT}, http://localhost:${PORT}`);
+        });
     }
-});
+}
+)
 
-// 1: Introduction codes
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-// 2: Session code
-
-// 3: Views code (backend server-side rendering) 
-app.set("views", "views");
-app.set("view engine", "ejs");
-
-// 4: Routing code
-app.post("/create-item", (req,res)=>{
-    console.log(req.body);
-    res.json({test: "success"});
-})
-app.get("/", function(req,res){
-    res.render('reja');
-});
-
-app.get("/author", function(req,res){
-    res.render("author", { user: user });
-});
-
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function(){
-    console.log(`The server is running sufficiently on port ${PORT}, http://localhost:${PORT}`);
-});
