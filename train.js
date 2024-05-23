@@ -9,17 +9,17 @@
 //     return count;
 //   }
   
-//   console.log(countLetter('e', 'engineer')); 
+//   console.log(countLetter('e', 'engineer'));  
 
-console.log("Jack Ma maslahatlari");
-const list = [
-    "yaxshi talaba bo'ling", // 0-20
-    "togri boshliq tanlang va koproq hato qiling", //20-30
-    "uzingizga ishlashni boshlang", //30-40
-    "siz kuchli bolgan narsalarni qiling", //40-50
-    "yoshlarga investitsiya qiling", //50-60
-    "endi dam oling, foyasi yoq", //60+
-]
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//     "yaxshi talaba bo'ling", // 0-20
+//     "togri boshliq tanlang va koproq hato qiling", //20-30
+//     "uzingizga ishlashni boshlang", //30-40
+//     "siz kuchli bolgan narsalarni qiling", //40-50
+//     "yoshlarga investitsiya qiling", //50-60
+//     "endi dam oling, foyasi yoq", //60+
+// ]
 
 // function maslahatBering(age, callback){
 //     if (typeof(age)!== 'number') callback("insert a number", null);
@@ -29,9 +29,10 @@ const list = [
 //     else if(age>40 && age<=50) callback(null, list[3]);
 //     else if(age>50 && age<=60) callback(null, list[4]);
 //     else {
-//         setTimeout(function(){
-//             callback(null, list[5])
-//         }, 5000);
+//         callback(null, list[5])
+//         // setTimeout(function(){
+//         //     callback(null, list[5])
+//         // }, 5000);
 //     }
 
 // }
