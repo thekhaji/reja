@@ -82,3 +82,29 @@
 // }
 
 // run();
+
+
+//Task B
+
+function countDigits(string){
+    let count = 0;
+    for(let i=0; i<string.length; i++){
+        switch (string[i]){
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            case '0':
+                count+=1;
+                break;          
+        }
+    }
+    return count;
+}
+
+console.log(countDigits("ad2a54y79wet0sfgb9"));
