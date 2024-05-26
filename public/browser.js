@@ -1,5 +1,3 @@
-
-
 console.log("FrontEnd JS ishga tushdi");
 
 function itemTemplate(data){
@@ -46,6 +44,26 @@ document.addEventListener("click", function(e){
     }
 
     if(e.target.classList.contains("edit-me")){
-        
+        let userInput = prompt("Edit the plan:", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+        if (userInput){
+            axios.post("edit-item", {id: e.target.getAttribute("data-id"), new_input: userInput})
+            .then((response)=>{
+                e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+            })
+            .catch((err)=>{
+                console.log("Try again to edit!");
+            });
+        }
     }
 });
+
+document.getElementById("clean-all").addEventListener("click", ()=>{
+    axios.post("/delete-all", {delete_all: true})
+    .then((response)=>{
+        alert(response.data.state);
+        document.location.reload();
+    })
+    .catch((err)=>{
+        console.log("Try again to delete all plans!");
+    });
+})

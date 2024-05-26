@@ -37,6 +37,17 @@ app.post("/create-item", (req,res)=>{
     });
 });
 
+
+app.post("/edit-item", (req,res)=>{
+    console.log(req);
+    const data = req.body;
+    db.collection("plans").findOneAndUpdate({_id: new mongoDB.ObjectId(data.id)}, {$set: {reja: data.new_input}}, 
+    function(err, data){
+        res.json({state: "success"});
+    });
+})
+
+
 app.post("/delete-item", function(req,res){
     const id = req.body.id;
 
@@ -44,6 +55,14 @@ app.post("/delete-item", function(req,res){
         res.json({state: "success"});
     });
 });
+
+app.post("/delete-all", function(req,res){
+    if(req.body.delete_all){
+        db.collection("plans").deleteMany(function(){
+            res.json({state: "all  plans has been deleted!"})
+        })
+    }
+})
 
 app.get("/", function(req,res){
     console.log('user visited /')
