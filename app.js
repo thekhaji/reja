@@ -1,11 +1,10 @@
 const express = require("express");
 const app = express();
-
 const fs = require("fs");
 
 //MongoDB connect
 const db = require("./server").db();
-
+const mongoDB = require("mongodb");
 //Author js Database
 let user;
 fs.readFile("database/user.json", "utf-8", (err,data)=>{
@@ -36,7 +35,16 @@ app.post("/create-item", (req,res)=>{
         console.log(data.ops);
         res.json(data.ops[0]);
     });
-})
+});
+
+app.post("/delete-item", function(req,res){
+    const id = req.body.id;
+
+    db.collection("plans").deleteOne({_id: new mongoDB.ObjectId(id)}, function(err,data){
+        res.json({state: "success"});
+    });
+});
+
 app.get("/", function(req,res){
     console.log('user visited /')
     db.collection("plans").find().toArray((err,data)=>{

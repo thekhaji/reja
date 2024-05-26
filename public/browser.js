@@ -1,3 +1,5 @@
+
+
 console.log("FrontEnd JS ishga tushdi");
 
 function itemTemplate(data){
@@ -27,4 +29,23 @@ document.getElementById("create-form").addEventListener("submit", function(e){
         console.log("Try again!!!");
     });
 
+});
+
+document.addEventListener("click", function(e){
+    if(e.target.classList.contains("delete-me")){
+        if(confirm("Are you sure to delete this plan?")){
+            axios.post("/delete-item", {id: e.target.getAttribute("data-id")})
+                .then((response)=>{
+                    console.log(response.data);
+                    e.target.parentElement.parentElement.remove();
+                })
+                .catch((err)=>{
+                    console.log("please try again!");
+                });
+        }
+    }
+
+    if(e.target.classList.contains("edit-me")){
+        
+    }
 });

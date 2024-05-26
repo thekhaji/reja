@@ -86,25 +86,73 @@
 
 //Task B
 
-function countDigits(string){
-    let count = 0;
-    for(let i=0; i<string.length; i++){
-        switch (string[i]){
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-            case '0':
-                count+=1;
-                break;          
-        }
+// function countDigits(string){
+//     let count = 0;
+//     for(let i=0; i<string.length; i++){
+//         switch (string[i]){
+//             case '1':
+//             case '2':
+//             case '3':
+//             case '4':
+//             case '5':
+//             case '6':
+//             case '7':
+//             case '8':
+//             case '9':
+//             case '0':
+//                 count+=1;
+//                 break;          
+//         }
+//     }
+//     return count;
+// }
+
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+
+//TASK C
+let time = new Date();
+
+class Shop{
+    non;
+    lagmon;
+    cola;
+    constructor(non, lagmon, cola){
+        this.non = non;
+        this.lagmon = lagmon;
+        this.cola = cola;
     }
-    return count;
+
+    qoldiq(){
+        console.log("hozir " + time.getHours() +":"+time.getMinutes()+":"+time.getSeconds());
+        console.log(this.non+"ta non,"+this.lagmon+"ta lagmon va "+this.cola+"ta cola mavjud!");
+    }
+    sotish(product, quantity){
+        if(product == 'non')
+            this.non -= quantity;
+        else if(product == 'lagmon')
+            this.lagmon -= quantity;
+        else if(product == 'cola')
+            this.cola -= quantity;
+        else
+            console.log("this product is not availabe");
+    }
+    qabul(product, quantity){
+        if(product == 'non')
+            this.non += quantity;
+        else if(product == 'lagmon')
+            this.lagmon += quantity;
+        else if(product == 'cola')
+            this.cola += quantity;
+        else
+            console.log("this type of product is not availabe");
+    }
+
 }
 
-console.log(countDigits("ad2a54y79wet0sfgb9"));
+const shop = new Shop(4, 5, 2);
+shop.qoldiq();
+shop.sotish('non', 3);
+shop.qabul('cola', 4);
+shop.qoldiq();
+
