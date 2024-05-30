@@ -62,7 +62,7 @@ const e = require("express");
 
 // }
 
-// call via then && catch
+// // call via then && catch
 // console.log("passed 0");
 // maslahatBering(65)
 //     .then((data) => {
@@ -164,24 +164,35 @@ const e = require("express");
 
 //TASK-D
 
-function checkContent(firstWord, secondWord){
-    let flag = false; 
-    if (firstWord.length == secondWord.length){
-        flag = true;
-        for(let i = 0; i<firstWord.length; i++){
-            if(secondWord.includes(firstWord[i])){
-                secondWord.replace(firstWord[i],"")
-            }
-            else{
-                flag = false;
-                break;
-            }
-        }
+// function checkContent(firstWord, secondWord){
+//     let flag = false; 
+//     if (firstWord.length == secondWord.length){
+//         flag = true;
+//         for(let i = 0; i<firstWord.length; i++){
+//             if(secondWord.includes(firstWord[i])){
+//                 secondWord.replace(firstWord[i],"")
+//             }
+//             else{
+//                 flag = false;
+//                 break;
+//             }
+//         }
+//     }
+//     return flag;
+// }
+
+// console.log(checkContent("ffalse", "eslfaf"));
+
+
+//TASK-E
+
+function getReverse(word){
+    let reversedWord = '';
+    for(let i = word.length - 1; i>=0; i--){
+        reversedWord += word[i];
     }
-    return flag;
+    return reversedWord;
 }
 
-console.log(checkContent("ffalse", "eslfaf"));
-
-
+console.log(getReverse("MIT12"));
 
