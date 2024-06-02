@@ -186,13 +186,27 @@ const e = require("express");
 
 //TASK-E
 
-function getReverse(word){
-    let reversedWord = '';
-    for(let i = word.length - 1; i>=0; i--){
-        reversedWord += word[i];
+// function getReverse(word){
+//     let reversedWord = '';
+//     for(let i = word.length - 1; i>=0; i--){
+//         reversedWord += word[i];
+//     }
+//     return reversedWord;
+// }
+
+// console.log(getReverse("MIT12"));
+
+function findDoublers(word){
+    for(let i=0; i<word.length; i++){
+        for(let m=0; m<word.length; m++){
+            if(i===m)
+                continue;
+            else if(word[i] === word[m]){
+                return true;
+            }
+        }
     }
-    return reversedWord;
+    return false;
 }
 
-console.log(getReverse("MIT12"));
-
+console.log(findDoublers("Timur"));
